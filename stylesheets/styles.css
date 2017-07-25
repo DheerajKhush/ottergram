@@ -22,16 +22,20 @@
 
 * { box-sizing: border-box; }
 
-/*html, body { height: 100%; }*/
+html, body { height: 100%; }
 
 body {
 	display: flex;
 	flex-direction: column;
 	font-size: 10px;
 	background: rgb(149,194,215);
+	margin: 0;
 }
 
-.main-header { flex: 0 1 auto; }
+.main-header { 
+	flex: 0 1 auto; 
+	width: 100%;
+}
 
 .main-content { 
 	display: flex;
@@ -120,3 +124,21 @@ body {
 
 	font-size: 18px;
 }
+
+@media all and (min-width: 768px) {
+	.main-content {
+		flex-direction: row;
+		overflow: hidden;
+	}
+
+	.thumbnail-list {
+		flex-direction: column;
+		order: 0;
+		margin-left: 20px;
+	}
+
+	.thumbnail-item { max-width: 260px; }
+
+	.thumbnail-item + .thumbnail-item { margin-top: 20px; }
+}
+
